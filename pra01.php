@@ -44,6 +44,7 @@
     $monthDay=date("t",$firstSecond);
     $lastDay=date("Y-") . $month . "-" . $monthDay;
     $today=date("Y-m-d");
+    $checktoday="";
     
 
     echo "月份 ==>" . $month . "<br>";
@@ -71,12 +72,23 @@
         echo "<tr>";
         
         for($j=0; $j<7; $j++){
-            $day=7*$i + ($j - $firstWeekDay) +1;
-            
+            $day=7*$i + $j - $firstWeekDay;
+            $shiftDay=strtotime("+$day days",$firstSecond);
+            $date=date("d",$shiftDay);
+            $dateWeek=date("w",$shiftDay);
+
+            if(date("Y-m-d",$shiftDay)==$today){
+                $checktoday="today";
+            }
+
             echo "<td>";
             
-            if($day>0 && $day<=$monthDay ){
-                echo $day;
+            if($day>=0 && $day<$monthDay ){
+                
+
+
+
+                echo $date;
             }
 
             echo "</td>";
