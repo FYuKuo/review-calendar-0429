@@ -31,6 +31,15 @@
             font-size: x-large;
             color: white;
         }
+
+        .weekend {
+            background-color: lightpink;
+        }
+        .weekend:hover {
+            background-color: #ffe1e1;
+        }
+
+
     </style>
 </head>
 <body>
