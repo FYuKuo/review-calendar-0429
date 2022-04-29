@@ -10,17 +10,27 @@
             border-collapse: collapse;
             height: 500px;
         }
-        table td {
+        table,td,th {
             border: 1px solid black;
             text-align: center;
         }
 
-        td {
+        td,th {
             padding: 8px 16px ;
             width: 14%;
             height: 14%;
+            background-color: #D9EEE3;
+
+        }
+        th{
+            background-color: white;
         }
 
+        td:hover{
+            background-color: #9FE2BF;
+            font-size: x-large;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -32,7 +42,9 @@
     $firstSecond=strtotime($firstDay);
     $firstWeekDay=date("w",$firstSecond);
     $monthDay=date("t",$firstSecond);
-    $lastDay=date("Y-") . $month . "-" . $monthDay; 
+    $lastDay=date("Y-") . $month . "-" . $monthDay;
+    $today=date("Y-m-d");
+    
 
     echo "月份 ==>" . $month . "<br>";
     echo "第一天 ==>" . $firstDay . "<br>";    
@@ -46,13 +58,13 @@
     echo "<table>";
     
     echo "<tr>";
-    echo "<td>星期日</td>";
-    echo "<td>星期一</td>";
-    echo "<td>星期二</td>";
-    echo "<td>星期三</td>";
-    echo "<td>星期四</td>";
-    echo "<td>星期五</td>";
-    echo "<td>星期六</td>";
+    echo "<th>星期日</th>";
+    echo "<th>星期一</th>";
+    echo "<th>星期二</th>";
+    echo "<th>星期三</th>";
+    echo "<th>星期四</th>";
+    echo "<th>星期五</th>";
+    echo "<th>星期六</th>";
     echo "</tr>";
 
     for($i=0; $i<6; $i++){
