@@ -81,14 +81,23 @@
                 $checktoday="today";
             }
 
-            echo "<td>";
+            
             
             if($day>=0 && $day<$monthDay ){
                 
-
-
+                if($dateWeek==0 || $dateWeek==6){
+                    echo "<td class=weekend>";
+                    
+                }else{
+                    echo "<td class=workday>";
+                    
+                }
+                
 
                 echo $date;
+            }else{
+
+                echo "<td>";
             }
 
             echo "</td>";
