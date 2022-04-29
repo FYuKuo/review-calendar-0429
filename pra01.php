@@ -8,6 +8,7 @@
     <style>
         table {
             border-collapse: collapse;
+            height: 500px;
         }
         table td {
             border: 1px solid black;
@@ -16,6 +17,8 @@
 
         td {
             padding: 8px 16px ;
+            width: 14%;
+            height: 14%;
         }
 
     </style>
@@ -56,10 +59,14 @@
         echo "<tr>";
         
         for($j=0; $j<7; $j++){
-            $day=7*$i + ($j - $firstWeekDay);
+            $day=7*$i + ($j - $firstWeekDay) +1;
             
             echo "<td>";
-            echo $day;
+            
+            if($day>0 && $day<=$monthDay ){
+                echo $day;
+            }
+
             echo "</td>";
 
         }
